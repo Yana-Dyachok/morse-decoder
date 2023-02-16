@@ -39,11 +39,10 @@ const MORSE_TABLE = {
 };
 
 function decode(expr) {
-  let temp = ''
+    let temp = ''
     let morseCode = []
-    expr.replace('11', '-').replace('10', '.').replace('0', '')
     for (let i = 10; i <= expr.length; i = i + 10) {
-        temp = expr.slice(i - 10, i)//
+        temp = expr.slice(i - 10, i)
         if (temp === '**********') temp = '/'
         morseCode.push(temp.replaceAll('11', '-').replaceAll('10', '.').replaceAll('0', ''))
     }
